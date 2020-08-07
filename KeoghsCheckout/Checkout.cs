@@ -11,6 +11,8 @@ namespace KeoghsCheckout
             {
                 if (item.itemSKU == "A")
                     total += 10;
+                if (item.itemSKU == "B")
+                    total += 15;
             }
 
             return total;
