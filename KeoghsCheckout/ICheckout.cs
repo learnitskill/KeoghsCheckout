@@ -1,7 +1,9 @@
-﻿namespace KeoghsCheckout
+﻿using System.Collections.Generic;
+
+namespace KeoghsCheckout
 {
     public interface ICheckout
     {
-        int BasketTotalAmount(Basket basket);
+        int BasketTotalAmount(IEnumerable<BasketItem> basketItems);
     }
 }

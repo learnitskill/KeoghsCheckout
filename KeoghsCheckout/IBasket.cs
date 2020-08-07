@@ -1,4 +1,6 @@
-﻿namespace KeoghsCheckout
+﻿using System.Collections.Generic;
+
+namespace KeoghsCheckout
 {
     public interface IBasket
     {

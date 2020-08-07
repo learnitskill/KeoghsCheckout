@@ -11,13 +11,13 @@ namespace KeoghsCheckoutTest
         {
             //Arrange
             var expected = 10;
-            var checkout = new Checkout();                    
+            ICheckout checkout = new Checkout();
             var basket = new Basket();
             var itemA = new BasketItem("A");            
             basket.Add(itemA);
-
+            
             //Act
-            var total = checkout.BasketTotalAmount(basket);
+            var total = checkout.BasketTotalAmount(basket.basketItems);
 
             //Assert
             Assert.That(total, Is.EqualTo(expected));

@@ -2,7 +2,7 @@
 {
     public class BasketItem
     {
-        private readonly string itemSKU;
+        public readonly string itemSKU;
 
         public BasketItem(string itemSKU)
         {

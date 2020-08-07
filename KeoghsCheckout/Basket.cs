@@ -4,9 +4,9 @@ namespace KeoghsCheckout
 {
     public class Basket : IBasket
     {
-        private readonly List<BasketItem> basketItems;
+        public readonly List<BasketItem> basketItems;
         public Basket()
-        {
+        {            
             basketItems = new List<BasketItem>();
         }
 
@@ -18,6 +18,7 @@ namespace KeoghsCheckout
             }
         }
 
+        
         public void Add(BasketItem item)
         {
             basketItems.Add(item);           

@@ -1,10 +1,20 @@
-﻿namespace KeoghsCheckout
+﻿using System.Collections.Generic;
+
+namespace KeoghsCheckout
 {
     public class Checkout : ICheckout
     {
-        public int BasketTotalAmount(Basket basket)
+        
+        public int BasketTotalAmount(IEnumerable<BasketItem> basketItems)
         {
-            return 10;
+            int total = 0;
+            foreach (var item in basketItems)
+            {
+                if (item.itemSKU == "A")
+                    total += 10;
+            }
+
+            return total;
         }
     }
 }
