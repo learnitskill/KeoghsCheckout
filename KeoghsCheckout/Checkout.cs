@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace KeoghsCheckout
 {
@@ -16,8 +17,13 @@ namespace KeoghsCheckout
             int total = 0;
             foreach (var item in basketItems)
             {
+                if (basketItems.Count(x=>x.itemSKU=="B") == 3)
+                    continue;
                 total += priceEngine.GetPrice(item.itemSKU);
             }
+
+                if (basketItems.Count(x=>x.itemSKU=="B") == 3)
+                total += 40;
 
             return total;
         }

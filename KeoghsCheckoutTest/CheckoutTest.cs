@@ -78,6 +78,8 @@ namespace KeoghsCheckoutTest
             var basket = new Basket();
             var itemB = new BasketItem("B");
             basket.Add(itemB);
+            basket.Add(itemB);
+            basket.Add(itemB);
 
             //Act
             var total = checkout.BasketTotalAmount(basket.basketItems);
