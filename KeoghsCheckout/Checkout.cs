@@ -4,8 +4,11 @@ namespace KeoghsCheckout
 {
     public class Checkout : ICheckout
     {
+        private readonly IPriceEngine priceEngine;
+
         public Checkout(IPriceEngine priceEngine)
         {
+            this.priceEngine = priceEngine;
         }
 
         public int BasketTotalAmount(IEnumerable<BasketItem> basketItems)
@@ -13,10 +16,7 @@ namespace KeoghsCheckout
             int total = 0;
             foreach (var item in basketItems)
             {
-                if (item.itemSKU == "A")
-                    total += 10;
-                if (item.itemSKU == "B")
-                    total += 15;
+                total += priceEngine.GetPrice(item.itemSKU);
             }
 
             return total;
