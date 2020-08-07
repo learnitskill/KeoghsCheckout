@@ -43,5 +43,30 @@ namespace KeoghsCheckoutTest
             //Assert
             Assert.That(total, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void BasketTotalAmount_Given4BasketItem_BaksetTotalAmountShouldBe120()
+        {
+            //Arrange
+            var expected = 120;
+            IPriceEngine priceEngine = new PriceEngine();
+            ICheckout checkout = new Checkout(priceEngine);
+            var basket = new Basket();
+            var itemA = new BasketItem("A");
+            var itemB = new BasketItem("B");
+            var itemC = new BasketItem("C");
+            var itemD = new BasketItem("D");
+            basket.Add(itemA);
+            basket.Add(itemB);
+            basket.Add(itemC);
+            basket.Add(itemD);
+
+            //Act
+            var total = checkout.BasketTotalAmount(basket.basketItems);
+
+            //Assert
+            Assert.That(total, Is.EqualTo(expected));
+        }
+
     }
 }
