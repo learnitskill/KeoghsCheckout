@@ -1,8 +1,8 @@
 ﻿namespace KeoghsCheckout
 {
-    public class Checkout
+    public class Checkout : ICheckout
     {
-        public object BasketTotalAmount(Basket basket)
+        public int BasketTotalAmount(Basket basket)
         {
             return 10;
         }
