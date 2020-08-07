@@ -1,18 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace KeoghsCheckout
 {
     public class Basket
     {
+        private List<BasketItem> basketItems;
         public Basket()
         {
+            basketItems = new List<BasketItem>();
         }
 
-        public object Total { get; set; }
-
-        public void Add(global::KeoghsCheckout.BasketItem item)
+        public int Total
         {
-            throw new NotImplementedException();
+            get
+            {
+                return basketItems.Count;
+            }
+        }
+
+        public void Add(BasketItem item)
+        {
+            basketItems.Add(item);           
         }
     }
 }
