@@ -3,8 +3,7 @@
 namespace KeoghsCheckout
 {
     public class Checkout : ICheckout
-    {
-        
+    {        
         public int BasketTotalAmount(IEnumerable<BasketItem> basketItems)
         {
             int total = 0;

@@ -22,5 +22,24 @@ namespace KeoghsCheckoutTest
             //Assert
             Assert.That(total, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void BasketTotalAmount_Given2BasketItem_BaksetTotalAmountShouldBe25()
+        {
+            //Arrange
+            var expected = 25;
+            ICheckout checkout = new Checkout();
+            var basket = new Basket();
+            var itemA = new BasketItem("A");
+            var itemB = new BasketItem("B");
+            basket.Add(itemA);
+            basket.Add(itemB);
+
+            //Act
+            var total = checkout.BasketTotalAmount(basket.basketItems);
+
+            //Assert
+            Assert.That(total, Is.EqualTo(expected));
+        }
     }
 }
