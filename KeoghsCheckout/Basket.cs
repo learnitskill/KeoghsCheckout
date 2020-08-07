@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace KeoghsCheckout
 {
     public class Basket
     {
-        private List<BasketItem> basketItems;
+        private readonly List<BasketItem> basketItems;
         public Basket()
         {
             basketItems = new List<BasketItem>();
