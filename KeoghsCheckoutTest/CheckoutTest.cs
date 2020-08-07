@@ -11,7 +11,8 @@ namespace KeoghsCheckoutTest
         {
             //Arrange
             var expected = 10;
-            ICheckout checkout = new Checkout();
+            IPriceEngine priceEngine = new PriceEngine();
+            ICheckout checkout = new Checkout(priceEngine);
             var basket = new Basket();
             var itemA = new BasketItem("A");            
             basket.Add(itemA);
@@ -28,7 +29,8 @@ namespace KeoghsCheckoutTest
         {
             //Arrange
             var expected = 25;
-            ICheckout checkout = new Checkout();
+            IPriceEngine priceEngine = new PriceEngine();
+            ICheckout checkout = new Checkout(priceEngine);
             var basket = new Basket();
             var itemA = new BasketItem("A");
             var itemB = new BasketItem("B");
