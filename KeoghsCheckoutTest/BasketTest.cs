@@ -6,7 +6,7 @@ namespace KeoghsCheckoutTest
 {
     public class BasketTest
     {
-        private Basket basket;
+        private IBasket basket;
         [SetUp]
         public void BasketSetup()
         {
@@ -44,7 +44,6 @@ namespace KeoghsCheckoutTest
             //Assert
             var total = basket.Total;
             Assert.That(total, Is.EqualTo(expected));
-        }
-
+        }        
     }
 }

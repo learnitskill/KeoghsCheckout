@@ -2,7 +2,7 @@
 
 namespace KeoghsCheckout
 {
-    public class Basket
+    public class Basket : IBasket
     {
         private readonly List<BasketItem> basketItems;
         public Basket()
