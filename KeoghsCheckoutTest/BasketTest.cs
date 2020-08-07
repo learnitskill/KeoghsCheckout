@@ -6,12 +6,18 @@ namespace KeoghsCheckoutTest
 {
     public class BasketTest
     {
+        private Basket basket;
+        [SetUp]
+        public void BasketSetup()
+        {
+            basket = new Basket();
+        }
+
         [Test]
         public void AddItem_GivenItemA_BaksetCountShouldBe1()
         {
             //Arrange
             var expected = 1;
-            var basket = new Basket();
             var item = new BasketItem("A");
 
             //Act
@@ -28,7 +34,6 @@ namespace KeoghsCheckoutTest
         {
             //Arrange
             var expected = 2;
-            var basket = new Basket();
             var itemA = new BasketItem("A");
             var itemB = new BasketItem("B");
 

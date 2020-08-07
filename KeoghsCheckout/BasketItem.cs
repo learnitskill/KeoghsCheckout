@@ -2,11 +2,11 @@
 {
     public class BasketItem
     {
-        private string itemName;
+        private readonly string itemSKU;
 
-        public BasketItem(string itemName)
+        public BasketItem(string itemSKU)
         {
-            this.itemName = itemName;
+            this.itemSKU = itemSKU;
         }
     }
 }
